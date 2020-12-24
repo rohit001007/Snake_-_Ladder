@@ -20,7 +20,8 @@ class Utility{
         var newPosition = this.START_POSITION;
         var option = 0;
         var diceNumber = 0;
-        var No_Play = 1
+        var diceCount = 0;
+        var No_Play = 1;
         var Ladder = 2;
         var Snake = 3;
 
@@ -29,6 +30,7 @@ class Utility{
             
             var diceNumber =this.rollDie();
             var option = this.optionCheck();
+            var diceCount = diceCount + diceNumber;
 
             console.log(`\n * Dice Rolling... And Number Come =: ${diceNumber}`);
             
@@ -53,7 +55,7 @@ class Utility{
             }
         }
         console.log(`\n * NewPosition is : ${newPosition}`);
+        console.log(`\n * Total Count Of Dice Are ${diceCount}`);
     }
-
 }
 module.exports = new Utility()
