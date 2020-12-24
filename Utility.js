@@ -24,30 +24,35 @@ class Utility{
         var Ladder = 2;
         var Snake = 3;
 
-        var diceNumber =this.rollDie();
-        var option = this.optionCheck();
+        while(newPosition < this.END_POSITION){
 
-        console.log(`\n * Dice Rolling... And Number Come =: ${diceNumber}`);
-        
-        switch(option){
+            var diceNumber =this.rollDie();
+            var option = this.optionCheck();
 
-            case No_Play:
-                console.log(`\n * No-Play *`);
-                newPosition = newPosition;
-                break;
-
-            case Ladder:
-                console.log(`\n * Ladder *`);
-                    newPosition = newPosition + diceNumber;
-                break;
+            console.log(`\n * Dice Rolling... And Number Come =: ${diceNumber}`);
             
-            case Snake:
-                console.log(`\n * Snake *`);
-                    newPosition = newPosition - diceNumber;
-                break;
+            switch(option){
+
+                case No_Play:
+                    console.log(`\n * No-Play *`);
+                    newPosition = newPosition;
+                    break;
+
+                case Ladder:
+                    console.log(`\n * Ladder *`);
+                    if(newPosition+diceNumber <= 100)
+                        newPosition = newPosition + diceNumber;
+                    break;
+                
+                case Snake:
+                    console.log(`\n * Snake *`);
+                    if(newPosition-diceNumber <= 100)
+                        newPosition = newPosition - diceNumber;
+                    break;
             }
-            console.log(`\n * NewPosition is : ${newPosition}`);
         }
+        console.log(`\n * NewPosition is : ${newPosition}`);
+    }
 
 }
 module.exports = new Utility()
