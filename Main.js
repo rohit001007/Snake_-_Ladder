@@ -1,3 +1,4 @@
 const utility = require("./Utility");
 
-utility.mainGamePlay();
+utility.twoPlayers();
+
