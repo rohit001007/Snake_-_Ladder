@@ -1,0 +1,1 @@
+console.log(`\n * Welcome To Snake And Ladder Game In Java Script`)
